@@ -1,0 +1,7 @@
+{
+    "analyzeCommits": {
+        "preset": "angular"
+    },
+    "branch": "master",
+    "tagFormat": "${version}"
+}
