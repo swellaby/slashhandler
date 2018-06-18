@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:8@sha256:9fef54193f605eb77fcb7eaae564e7cc9b3444a12d76a2e1c87b9789752852b3
+
+    working_directory: ~/slashhandler
+
+    steps:
+      - checkout:
+          post: git pull --ff-only origin "refs/pull/${CIRCLE_PULL_REQUEST//*pull\//}/merge"
+
+      - restore_cache:
+          keys:
+            - slashhandler-node8-{{ checksum "package.json" }}
+            - slashhandler-node8-
+
+      - run: npm install --quiet
+
+      - save_cache:
+          key: slashhandler-node8-{{ checksum "package.json" }}
+          paths:
+            - ~/slashhandler/node_modules
+
+      - run: npm run lint
+
+      - run: npm run test:ci
+
+      - run:
+          name: Push Code Coverage
+          command: bash <(curl -s https://codecov.io/bash) || true
+          environment:
+            CODECOV_TOKEN: 12625a2c-a74b-4756-a8e3-d8a63b52ef53
+
+      # store test reports
+      - store_test_results:
+          path: coverage
+
+      - deploy:
+          name: Release
+          command: npm run release
