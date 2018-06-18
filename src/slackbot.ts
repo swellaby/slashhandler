@@ -1,11 +1,27 @@
 import { Request, Response } from 'express';
 import { SlackEvent, CommandHandler } from './models';
 
+/**
+ * Handles slashcommands
+ * @export
+ * @class SlackBot
+ */
 export class SlackBot {
     private commandHandlers: { [key: string] : CommandHandler } = {};
 
+    /**
+     * Creates an instance of SlackBot.
+     * @param {string} token Slack app token
+     * @memberof SlackBot
+     */
     constructor(private token: string) {}
 
+    /**
+     * Processes an incoming request from slack
+     * @param {Request} req
+     * @param {Response} res
+     * @memberof SlackBot
+     */
     public processMessage(req: Request, res: Response): void {
         const event: SlackEvent = req.body;
         this.verifyRequest(event);
@@ -21,10 +37,20 @@ export class SlackBot {
         }
     }
 
+    /**
+     * Registers a set of handlers for a command
+     * @param {string} command
+     * @param {CommandHandler} handler
+     * @memberof SlackBot
+     */
     public registerCommand(command: string, handler: CommandHandler) {
         this.commandHandlers[command] = handler;
     }
 
+    /**
+     * True if the command is regestered false otherwise
+     * @memberof SlackBot
+     */
     public readonly isCommandRegistered = (command: string): boolean => this.commandHandlers[command] !== undefined;
 
     private verifyRequest(body: SlackEvent): void {
