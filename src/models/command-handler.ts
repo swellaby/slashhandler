@@ -18,5 +18,5 @@ export class CommandHandler {
      * @type {string}
      * @memberof CommandHandler
      */
-    public helpText: string;
+    public helpText?: string;
 }

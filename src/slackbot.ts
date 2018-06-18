@@ -44,6 +44,9 @@ export class SlackBot {
      * @memberof SlackBot
      */
     public registerCommand(command: string, handler: CommandHandler) {
+        if (!handler.helpText) {
+            handler.helpText = 'You are not doing it right.';
+        }
         this.commandHandlers[command] = handler;
     }
 

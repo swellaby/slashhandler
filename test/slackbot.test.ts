@@ -101,6 +101,16 @@ describe('slackbot', () => {
                 );
                 expect(sendSpy).not.toHaveBeenCalledWith('not helpful');
             });
+
+            it('should provide default help text if not defined', () => {
+                sut.registerCommand('helpful', { handlers: { a: jest.fn() } });
+                sut.processMessage(
+                    <any>{ body: { token: token, command: '/helpful', text: 'help' } },
+                    <any>{ send: sendSpy }
+                );
+
+                expect(sendSpy).toHaveBeenCalledWith('You are not doing it right.');
+            });
         });
     });
 });
