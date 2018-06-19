@@ -9,6 +9,7 @@ Framework for building slash command handlers
 [![AppVeyor Badge][appveyor-badge]][appveyor-url]
 [![Test Results Badge][tests-badge]][appveyor-url]
 [![Codecov Badge][codecov-badge]][codecov-url]
+[![Sonar Quality Gate Badge][sonar-quality-gate-badge]][sonar-url]
 
 ## How to use?
 
@@ -34,3 +35,5 @@ Framework for building slash command handlers
 [npm-package-url]: https://www.npmjs.com/package/@swellaby/slashhandler
 [license-url]: ./LICENSE
 [license-badge]: https://img.shields.io/github/license/swellaby/slashhandler.svg
+[sonar-quality-gate-badge]: https://sonarcloud.io/api/project_badges/measure?project=swellaby%3Aslashhandler&metric=alert_status
+[sonar-url]: https://sonarcloud.io/dashboard?id=swellaby%3Aslashhandler
