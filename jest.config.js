@@ -11,6 +11,15 @@ module.exports = {
             'tsConfigFile': 'tsconfig.json'
         }
     },
+    reporters: [
+        'default',
+        [
+            'jest-junit',
+            {
+                output: '.testresults/junit.xml'
+            }
+        ]
+    ],
     transform: {
         '^.+\\.ts?$': 'ts-jest'
     },

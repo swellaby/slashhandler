@@ -14,8 +14,17 @@ jobs:
           keys:
             - slashhandler-node8-{{ checksum "package.json" }}
             - slashhandler-node8-
+      - restore_cache:
+          keys:
+            - sonar-cache
 
       - run: npm install --quiet
+      - run: npm i -g sonarqube-scanner --quiet
+      # - run:
+      #     name: Set Environment Variables
+      #     command: |
+      #       echo "export PROJECT_VERSION=$(node -e "console.log(require('./package.json').version);")" >> $BASH_ENV
+            # source $BASH_ENV
 
       - save_cache:
           key: slashhandler-node8-{{ checksum "package.json" }}
@@ -35,6 +44,15 @@ jobs:
       # store test reports
       - store_test_results:
           path: coverage
+
+      - run:
+          name: sonar
+          command: sonar-scanner -Dsonar.projectVersion=$CIRCLE_BUILD_NUM -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
+
+      - save_cache:
+          paths:
+            - ~/.sonar
+          key: sonar-cache
 
       - deploy:
           name: Release
