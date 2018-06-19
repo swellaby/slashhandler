@@ -19,7 +19,7 @@ jobs:
             - sonar-cache
 
       - run: npm install --quiet
-      - run: sudo npm i -g sonarqube-scanner --quiet
+      - run: npm i -g sonarqube-scanner --quiet
       # - run:
       #     name: Set Environment Variables
       #     command: |
