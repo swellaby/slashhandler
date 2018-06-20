@@ -1,3 +1,5 @@
+// const jestSonar = require('jest-sonar-reporter');
+// const x = new jestSonar();
 module.exports = {
     coverageDirectory: './coverage/',
     coveragePathIgnorePatterns: [
@@ -20,6 +22,7 @@ module.exports = {
             }
         ]
     ],
+    testResultsProcessor: 'jest-sonar-reporter',
     transform: {
         '^.+\\.ts?$': 'ts-jest'
     },
