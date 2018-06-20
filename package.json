@@ -39,6 +39,7 @@
     "husky": "^0.14.3",
     "jest": "^23.1.0",
     "jest-junit": "^5.1.0",
+    "jest-sonar-reporter": "^2.0.0",
     "semantic-release": "^15.5.4",
     "ts-jest": "^22.4.5",
     "tslint": "^5.9.1",
@@ -47,5 +48,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "typings": "src/index.ts"
+  "typings": "src/index.ts",
+  "jestSonar": {
+      "reportPath": ".testresults",
+      "reportFile": "sonar.xml"
+  }
 }

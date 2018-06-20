@@ -20,6 +20,7 @@ module.exports = {
             }
         ]
     ],
+    testResultsProcessor: 'jest-sonar-reporter',
     transform: {
         '^.+\\.ts?$': 'ts-jest'
     },
