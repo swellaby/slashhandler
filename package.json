@@ -41,7 +41,7 @@
     "jest-junit": "5.1.0",
     "jest-sonar-reporter": "2.0.0",
     "semantic-release": "15.5.4",
-    "ts-jest": "22.4.5",
+    "ts-jest": "23.0.0",
     "tslint": "5.10.0",
     "typescript": "2.9.2"
   },
