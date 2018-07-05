@@ -19,9 +19,9 @@ Framework for building slash command handlers
 
 ### Examples
 
-* [Google Functions Simple](../examples/google-function.ts)
+* [Google Functions Simple](./examples/google-function.ts)
 * [Google Functions (full w/ deploy)](https://github.com/beverts312/soundboard-slackbot)
-* [Express Webserver Simple](../examples/express.ts)
+* [Express Webserver Simple](./examples/express.ts)
 
 [circleci-badge]: https://img.shields.io/circleci/project/github/swellaby/slashhandler.svg?label=linux%20build
 [circleci-url]: https://circleci.com/gh/swellaby/slashhandler
