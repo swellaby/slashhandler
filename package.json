@@ -43,7 +43,7 @@
     "semantic-release": "15.9.3",
     "ts-jest": "23.0.0",
     "tslint": "5.10.0",
-    "typescript": "2.9.2"
+    "typescript": "3.0.1"
   },
   "publishConfig": {
     "access": "public"
