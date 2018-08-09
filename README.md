@@ -27,7 +27,7 @@ Framework for building slash command handlers
 [circleci-url]: https://circleci.com/gh/swellaby/slashhandler
 [appveyor-badge]: https://img.shields.io/appveyor/ci/swellaby/slashhandler.svg?label=windows%20build
 [appveyor-url]: https://ci.appveyor.com/project/swellaby/slashhandler
-[tests-badge]: https://img.shields.io/appveyor/tests/swellaby/slashhandler.svg
+[tests-badge]: https://img.shields.io/appveyor/tests/swellaby/slashhandler.svg?label=unit%20tests
 [codecov-badge]: https://img.shields.io/codecov/c/github/swellaby/slashhandler.svg
 [codecov-url]: https://codecov.io/gh/swellaby/slashhandler
 [npm-version-badge]: https://img.shields.io/npm/v/@swellaby/slashhandler.svg
