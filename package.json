@@ -19,7 +19,7 @@
     "eclint": "2.8.0",
     "fixpack": "2.3.1",
     "husky": "^1.0.0-rc.13",
-    "jest": "23.4.2",
+    "jest": "23.5.0",
     "jest-junit": "5.1.0",
     "jest-sonar-reporter": "2.0.0",
     "semantic-release": "15.9.6",
