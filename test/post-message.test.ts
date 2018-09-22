@@ -12,7 +12,7 @@ describe('postMessage', () => {
         reqSpy = jest.spyOn(https, 'request').mockReturnValue({ write: writeSpy, end: endSpy });
     });
 
-    it('should build request prpoerly', () => {
+    it('should build request properly', () => {
         postMessage('message', 'path');
         expect(reqSpy).toHaveBeenCalled();
         expect(reqSpy.mock.calls[0][0]).toEqual({
@@ -28,7 +28,7 @@ describe('postMessage', () => {
         });
     });
 
-    it('should except responseType override', () => {
+    it('should expect responseType override', () => {
         postMessage('message', 'path', 'ephemeral');
         expect(reqSpy).toHaveBeenCalled();
         expect(reqSpy.mock.calls[0][0]).toEqual({
