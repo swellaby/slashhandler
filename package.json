@@ -14,7 +14,7 @@
     "@swellaby/tslint-config": "1.1.5",
     "@types/express": "4.16.0",
     "@types/jest": "23.3.2",
-    "@types/node": "8.10.30",
+    "@types/node": "8.10.59",
     "babel-jest": "23.6.0",
     "eclint": "2.8.0",
     "fixpack": "2.3.1",
