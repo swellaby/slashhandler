@@ -9,6 +9,7 @@ describe('postMessage', () => {
     beforeEach(() => {
         writeSpy = jest.fn();
         endSpy = jest.fn();
+        // @ts-ignore
         reqSpy = jest.spyOn(https, 'request').mockReturnValue({ write: writeSpy, end: endSpy });
     });
 

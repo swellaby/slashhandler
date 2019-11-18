@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:8@sha256:d97f5bf54e016ad55dd0475f8710b99be14884ab1afcae8875f8092341264b0c
+      - image: circleci/node:10
 
     working_directory: ~/slashhandler
 
@@ -12,14 +12,14 @@ jobs:
 
       - restore_cache:
           keys:
-            - slashhandler-node8-{{ checksum "package.json" }}
-            - slashhandler-node8-
-      - restore_cache:
-          keys:
-            - sonar-cache
+            - slashhandler-node10-{{ checksum "package.json" }}
+            - slashhandler-node10-
+    #   - restore_cache:
+    #       keys:
+    #         - sonar-cache
 
       - run: npm install --quiet
-      - run: npm i -g sonarqube-scanner --quiet
+    #   - run: npm i -g sonarqube-scanner --quiet
       # - run:
       #     name: Set Environment Variables
       #     command: |
@@ -27,7 +27,7 @@ jobs:
             # source $BASH_ENV
 
       - save_cache:
-          key: slashhandler-node8-{{ checksum "package.json" }}
+          key: slashhandler-node10-{{ checksum "package.json" }}
           paths:
             - ~/slashhandler/node_modules
 
@@ -45,9 +45,9 @@ jobs:
       - store_test_results:
           path: coverage
 
-      - run:
-          name: sonar
-          command: sonar-scanner -Dsonar.projectVersion=$CIRCLE_BUILD_NUM -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
+    #   - run:
+    #       name: sonar
+    #       command: sonar-scanner -Dsonar.projectVersion=$CIRCLE_BUILD_NUM -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONARCLOUD_TOKEN
 
       - save_cache:
           paths:

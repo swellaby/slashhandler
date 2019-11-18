@@ -1,9 +1,6 @@
 {
     "recommendations": [
-        "eg2.tslint",
-        "christian-kohler.path-intellisense",
-        "christian-kohler.npm-intellisense",
-        "eamodio.gitlens",
-        "EditorConfig.EditorConfig"
+        "swellaby.node-pack",
+        "swellaby.common-pack"
     ]
 }
