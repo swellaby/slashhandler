@@ -2,6 +2,8 @@
 /coverage/
 /test/
 .testresults/
+.coverage/
+.azure-pipelines/
 *.tgz*
 *.tar*
 .circleci/

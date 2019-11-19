@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/swellaby/slashhandler#readme",
   "jestSonar": {
-    "reportPath": ".testresults",
+    "reportPath": ".testresults/unit",
     "reportFile": "sonar.xml"
   },
   "license": "MIT",
