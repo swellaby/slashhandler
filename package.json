@@ -49,8 +49,11 @@
     "format": "eclint fix ./**/*",
     "lint": "npm run tslint",
     "release": "npm run build && semantic-release --debug",
-    "test": "jest --coverage",
-    "test:ci": "jest --coverage --maxWorkers=2",
+    "test": "jest",
+    "test:ci": "jest --maxWorkers=2",
+    "coverage": "jest --coverage --coverageThreshold={}",
+    "coverage:ci": "jest --coverage --maxWorkers=2",
+    "coverage:enforce": "jest --coverage",
     "test:watch": "jest --watch",
     "tsfix": "npm run tslint -- --fix",
     "tslint": "tslint --project tsconfig.json -c tslint.json"
