@@ -7,6 +7,6 @@ steps:
     publishTestResults:
       taskDisplayName: 'Publish unit test results'
       testResultsFormat: 'JUnit'
-      testResultsFiles: 'xunit.xml'
+      testResultsFiles: 'junit.xml'
       searchFolder: '$(Build.SourcesDirectory)/.testresults/unit'
       testRunTitle: 'slashhandler::Unit Tests::${{ parameters.envName }} PR - Build $(Build.BuildId)'
