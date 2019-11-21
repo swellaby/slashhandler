@@ -1,22 +1,25 @@
 {
-    "files.exclude": {
-        "**/*.js": {
-            "when": "$(basename).ts"
-        },
-        "**/*.map": {
-            "when": "$(basename).map"
-        },
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "coverage/": true,
-        ".coverage/": true,
-        ".testresults/": true,
-        "node_modules/": true,
-        "npm-debug.log": true,
-        "**/*.tgz*": true,
-        "**/*.tar.*": true
-    }
+  "files.exclude": {
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/*.map": {
+      "when": "$(basename).map"
+    },
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "coverage/": true,
+    ".coverage/": true,
+    ".testresults/": true,
+    "node_modules/": true,
+    "npm-debug.log": true,
+    "**/*.tgz*": true,
+    "**/*.tar.*": true
+  },
+  "files.associations": {
+    "**/.azure-pipelines/**": "azure-pipelines"
+  },
 }
