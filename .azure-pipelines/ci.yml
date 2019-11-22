@@ -1,0 +1,39 @@
+trigger:
+- master
+
+pr: none
+
+pool:
+  vmImage: 'Ubuntu-18.04'
+
+resources:
+  repositories:
+  - repository: templates
+    type: github
+    name: swellaby/azure-pipelines-templates
+    endpoint: swellaby
+
+steps:
+- template: 'steps/run-tests.yml'
+  parameters:
+    buildType: 'CI'
+
+- script: |
+    bash <(curl -s https://codecov.io/bash) -t $(codecovToken)
+  displayName: 'Publish coverage to Codecov'
+
+- template: templates/yml/any/sonar/run-sonar-cloud-cli-analysis.yml@templates
+
+- task: ArchiveFiles@2
+  displayName: 'Archive: full repo'
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveType: tar
+    archiveFile: '$(repoArchivePath)'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: full repo'
+  inputs:
+    PathtoPublish: '$(repoArchivePath)'
+    ArtifactName: '$(repoArtifactName)'
