@@ -1,7 +1,7 @@
 {
-    "analyzeCommits": {
-        "preset": "angular"
-    },
-    "branch": "master",
-    "tagFormat": "${version}"
+  "analyzeCommits": {
+    "preset": "angular"
+  },
+  "branch": "master",
+  "tagFormat": "${version}"
 }

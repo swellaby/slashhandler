@@ -49,6 +49,7 @@
     "format": "eclint fix ./**/*",
     "lint": "npm run tslint",
     "release": "npm run build && semantic-release --debug",
+    "release:cd": "semantic-release --debug",
     "test": "jest",
     "test:ci": "jest --maxWorkers=2",
     "coverage": "jest --coverage --coverageThreshold={}",

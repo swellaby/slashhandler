@@ -1,5 +1,6 @@
 parameters:
   envName: ''
+  buildType: ' PR'
 
 steps:
 - template: templates/yml/node/combo/npm-coverage-validation-xunit-cobertura.yml@templates
@@ -9,4 +10,4 @@ steps:
       testResultsFormat: 'JUnit'
       testResultsFiles: 'junit.xml'
       searchFolder: '$(Build.SourcesDirectory)/.testresults/unit'
-      testRunTitle: 'slashhandler::Unit Tests::${{ parameters.envName }} PR - Build $(Build.BuildId)'
+      testRunTitle: 'slashhandler::Unit Tests::${{ parameters.envName }}${{ parameters.buildType }} - Build $(Build.BuildId)'
