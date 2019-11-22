@@ -1,6 +1,9 @@
 {
   "analyzeCommits": {
-    "preset": "angular"
+    "preset": "angular",
+    "releaseRules": [
+      {"type": "docs", "scope": "README", "release": "patch"}
+    ]
   },
   "branch": "master",
   "tagFormat": "${version}"
