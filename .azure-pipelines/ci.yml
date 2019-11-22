@@ -6,6 +6,9 @@ pr: none
 pool:
   vmImage: 'Ubuntu-18.04'
 
+variables:
+- group: slashhandler
+
 resources:
   repositories:
   - repository: templates
