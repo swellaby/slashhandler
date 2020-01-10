@@ -5,6 +5,8 @@
       {"type": "docs", "scope": "README", "release": "patch"}
     ]
   },
-  "branch": "master",
+  "branches": [
+    "master"
+  ],
   "tagFormat": "${version}"
 }
